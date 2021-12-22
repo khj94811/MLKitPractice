@@ -31,6 +31,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    aaptOptions {
+        noCompress "tflite"
+        // or noCompress "lite"
+    }
 }
 
 dependencies {
@@ -38,6 +42,8 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite:2.7.0'
 
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:17.0.1'
+
+    implementation 'com.google.mlkit:image-labeling-custom:17.0.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
